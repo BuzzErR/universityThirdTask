@@ -20,6 +20,7 @@ jobs:
       - name: Run Test
         run: python -m unittest discover tests
       - name: Create environment for bot
+        if: always()
         shell: bash
         env:
           BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
@@ -27,6 +28,7 @@ jobs:
         run: |
           echo "$BOT_TOKEN $FATHER_ID" > "config.txt"
       - name: Notify user
+        if: always()
         run: python bot.py
 
         
