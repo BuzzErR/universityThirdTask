@@ -17,3 +17,7 @@ jobs:
           architecture: x64
       - name: Run Test
         run: python -m unittest discover tests
+      
+      - name: List all files
+        run: |
+          ls ${{github.workspace}}
