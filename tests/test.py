@@ -26,7 +26,7 @@ class TestMethods(unittest.TestCase):
     def test_max(self):
         # print(self.numbers)
         try:
-            self.assertEqual(max(self.numbers) + 5, main.find_max(self.numbers))
+            self.assertEqual(max(self.numbers), main.find_max(self.numbers))
         except AssertionError as e:
             with open('bot_buffer.txt', 'a') as f:
                 f.write(str(e) + ' test_max\n')
