@@ -24,7 +24,7 @@ jobs:
           BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
           FATHER_ID: ${{ secrets.FATHER_ID }}
         run: |
-          echo "$env:BOT_TOKEN $env:FATHER_ID" > "config.txt"
+          echo "$BOT_TOKEN $FATHER_ID" > "config.txt"
       - name: Check config
         run: cat config.txt
       - name: Notify user
