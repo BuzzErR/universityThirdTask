@@ -20,6 +20,7 @@ jobs:
       - name: Run Test
         run: python -m unittest discover tests
       - name: Create environment for bot
+        shell: bash
         env:
           BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
           FATHER_ID: ${{ secrets.FATHER_ID }}
