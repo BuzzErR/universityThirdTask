@@ -30,6 +30,3 @@ jobs:
       - name: Notify user
         if: always()
         run: python bot.py
-
-        
-    name: Failure Allert
