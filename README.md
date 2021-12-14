@@ -10,3 +10,5 @@
 
 Для корректной работы тестов не рекомендуется создавать файл с названием generator_for_tests.txt внутри папки с проектом
 Если любое значение превысит допустимый размер float, то вернется inf
+
+![workflow](https://github.com/BuzzErR/universityThirdTask/actions/workflows/automated.yml/badge.svg)
