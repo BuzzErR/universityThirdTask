@@ -2,6 +2,7 @@ import unittest
 import random
 import functools
 import main
+import time
 
 def generate_random_data():
     result = []
@@ -49,6 +50,25 @@ class TestMethods(unittest.TestCase):
         try:
             self.assertEqual(functools.reduce((lambda x, y: x * y), self.numbers),
                             main.multiplication_of_numbers(self.numbers))
+        except AssertionError as e:
+            with open('bot_buffer.txt', 'a') as f:
+                f.write(str(e) + ' test_multiplication_no_overflow\n')
+            raise Exception(e)
+
+    def test_execution_speed_sum(self):
+        start_time = time.time()
+        _ = main.sum_of_numbers(self.numbers)
+        end_time = time.time()
+        first_exec_time = end_time - start_time
+
+        new_numbers = self.numbers * 100
+        start_time = time.time()
+        _ = main.sum_of_numbers(self.numbers)
+        end_time = time.time()
+        second_exec_time = end_time - start_time
+        statement = round(second_exec_time / first_exec_time) < 100
+        try:
+            self.assertTrue(statement)
         except AssertionError as e:
             with open('bot_buffer.txt', 'a') as f:
                 f.write(str(e) + ' test_multiplication_no_overflow\n')
