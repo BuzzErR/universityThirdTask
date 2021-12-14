@@ -25,8 +25,7 @@ jobs:
           FATHER_ID: ${{ secrets.FATHER_ID }}
         run: |
           echo "$BOT_TOKEN $FATHER_ID" > "config.txt"
-      - name: Check config
-        run: cat config.txt
+          cat "config.txt"
       - name: Notify user
         run: python bot.py
 
