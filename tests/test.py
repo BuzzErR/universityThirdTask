@@ -58,15 +58,22 @@ class TestMethods(unittest.TestCase):
     def test_execution_speed_sum(self):
         start_time = time.time()
         _ = main.sum_of_numbers(self.numbers)
+        _ = main.find_min(self.numbers)
+        _ = main.find_max(self.numbers)
+        _ = main.multiplication_of_numbers(self.numbers)
         end_time = time.time()
         first_exec_time = end_time - start_time
 
         new_numbers = self.numbers * 100
         start_time = time.time()
-        _ = main.sum_of_numbers(self.numbers)
+        _ = main.sum_of_numbers(new_numbers)
+        _ = main.find_min(new_numbers)
+        _ = main.find_max(new_numbers)
+        _ = main.multiplication_of_numbers(new_numbers)
         end_time = time.time()
         second_exec_time = end_time - start_time
-        statement = round(second_exec_time / first_exec_time) < 100
+        statement = round(second_exec_time / first_exec_time) <= 100
+        print(second_exec_time, first_exec_time)
         try:
             self.assertTrue(statement)
         except AssertionError as e:
