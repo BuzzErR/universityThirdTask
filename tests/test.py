@@ -78,7 +78,7 @@ class TestMethods(unittest.TestCase):
             self.assertTrue(statement)
         except AssertionError as e:
             with open('bot_buffer.txt', 'a') as f:
-                f.write(str(e) + ' test_multiplication_no_overflow\n')
+                f.write(str(e) + ' test_execution_speed_sum\n')
             raise Exception(e)
 
     def test_import_of_data(self):
