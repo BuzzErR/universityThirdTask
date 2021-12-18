@@ -18,8 +18,6 @@ def sum_of_numbers(numbers):
     result = 0
     for num in numbers:
         result += num
-        if result == float('inf'):
-            break
     return result
 
 
@@ -32,8 +30,6 @@ def multiplication_of_numbers(numbers):
     # стоит проверка на переполнение
     for number in numbers:
         result *= number
-        if result == float('inf'):
-            break
     return result
 
 
