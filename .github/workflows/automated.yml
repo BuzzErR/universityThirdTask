@@ -2,6 +2,7 @@ name: Push triggered test
 on: push
 jobs:
   build:
+    runs-on: ubuntu-latest
     strategy:
             matrix:
               os: [ubuntu-latest]

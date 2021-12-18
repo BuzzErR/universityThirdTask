@@ -2,6 +2,7 @@ name: Notify through telegram bot
 on: push
 jobs:
   build:
+    runs-on: ubuntu-latest
     strategy:
             matrix:
               os: [ubuntu-latest]
