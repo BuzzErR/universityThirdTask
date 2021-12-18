@@ -72,7 +72,8 @@ class TestMethods(unittest.TestCase):
         _ = main.multiplication_of_numbers(new_numbers)
         end_time = time.time()
         second_exec_time = end_time - start_time
-        statement = round(second_exec_time / first_exec_time) <= 100
+        # 150 - т.к. линейным не может быть процесс при увеличении кол-ва чисел в сто раз из-за кратно увеличивающиегося произведения
+        statement = round(second_exec_time / first_exec_time) <= 150 
         print(second_exec_time, first_exec_time)
         try:
             self.assertTrue(statement)
