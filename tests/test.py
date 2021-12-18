@@ -93,7 +93,7 @@ class TestMethods(unittest.TestCase):
         end_time = time.time()
         second_exec_time = end_time - start_time
         python_functions_time = round(second_exec_time / first_exec_time)
-        
+        # закладываем 10% для погрешности, т.к. работаем с большими файлами и числами, если это неправильно, то можно убрать
         statement = round(my_functions_time / python_functions_time, 1) <= 1.1
         try:
             self.assertTrue(statement)
