@@ -74,11 +74,6 @@ class TestMethods(unittest.TestCase):
         _ = main.multiplication_of_numbers(new_numbers)
         end_time = time.time()
         second_exec_time = end_time - start_time
-<<<<<<< HEAD
-        # 150 - т.к. линейным не может быть процесс при увеличении кол-ва чисел в сто раз из-за кратно увеличивающиегося произведения
-        statement = round(second_exec_time / first_exec_time) <= 150 
-        print(second_exec_time, first_exec_time)
-=======
         my_functions_time = round(second_exec_time / first_exec_time)
         
         start_time = time.time()
@@ -100,7 +95,6 @@ class TestMethods(unittest.TestCase):
         python_functions_time = round(second_exec_time / first_exec_time)
         # закладываем 10% для погрешности, т.к. работаем с большими файлами и числами, если это неправильно, то можно убрать
         statement = round(my_functions_time / python_functions_time, 1) <= 1.1
->>>>>>> fixed_time_test
         try:
             self.assertTrue(statement)
         except AssertionError as e:
