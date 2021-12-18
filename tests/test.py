@@ -56,6 +56,8 @@ class TestMethods(unittest.TestCase):
             raise Exception(e)
 
     def test_execution_speed_sum(self):
+        # тестировать время выполнения работы "влоб" не представляется возможным т.к. это сильно зависит от производительности 
+        # компьютера, потому будем сравнивать зависимость от времени выполнения наших функций и встроенных
         start_time = time.time()
         _ = main.sum_of_numbers(self.numbers)
         _ = main.find_min(self.numbers)
@@ -72,8 +74,27 @@ class TestMethods(unittest.TestCase):
         _ = main.multiplication_of_numbers(new_numbers)
         end_time = time.time()
         second_exec_time = end_time - start_time
-        statement = round(second_exec_time / first_exec_time) <= 100
-        print(second_exec_time, first_exec_time)
+        my_functions_time = round(second_exec_time / first_exec_time)
+        
+        start_time = time.time()
+        _ = sum(self.numbers)
+        _ = min(self.numbers)
+        _ = max(self.numbers)
+        _ = functools.reduce((lambda x, y: x * y), self.numbers)
+        end_time = time.time()
+        first_exec_time = end_time - start_time
+
+        new_numbers = self.numbers * 100
+        start_time = time.time()
+        _ = sum(new_numbers)
+        _ = min(new_numbers)
+        _ = max(new_numbers)
+        _ = functools.reduce((lambda x, y: x * y), new_numbers)
+        end_time = time.time()
+        second_exec_time = end_time - start_time
+        python_functions_time = round(second_exec_time / first_exec_time)
+        
+        statement = round(my_functions_time / python_functions_time, 1) <= 1.1
         try:
             self.assertTrue(statement)
         except AssertionError as e:
