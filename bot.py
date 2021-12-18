@@ -1,5 +1,5 @@
 import telebot
-
+# сделал через файлы, а не переменные os, чтобы проще тестировать было на локальной машине
 with open('config.txt', 'r') as f:
     data = f.read()
 token, father_id = data.split()
