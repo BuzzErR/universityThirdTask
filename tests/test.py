@@ -18,7 +18,7 @@ class TestMethods(unittest.TestCase):
     def test_min(self):
         # print(self.numbers)
         try:
-            self.assertEqual(min(self.numbers), main.find_min(self.numbers))
+            self.assertEqual(min(self.numbers) + 1, main.find_min(self.numbers))
         except AssertionError as e:
             with open('bot_buffer.txt', 'a') as f:
                 f.write(str(e) + ' test_min\n')
