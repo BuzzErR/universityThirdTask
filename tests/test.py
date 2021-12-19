@@ -55,8 +55,8 @@ class TestMethods(unittest.TestCase):
                 f.write(str(e) + ' test_multiplication_no_overflow\n')
             raise Exception(e)
 
-    def test_execution_speed_sum(self):
-        # тестировать время выполнения работы "влоб" не представляется возможным т.к. это сильно зависит от производительности 
+    def test_execution_speed(self):
+        # тестировать время выполнения работы "в лоб" не представляется возможным т.к. это сильно зависит от производительности 
         # компьютера, потому будем сравнивать зависимость от времени выполнения наших функций и встроенных
         start_time = time.time()
         _ = main.sum_of_numbers(self.numbers)
